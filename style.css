@@ -41,3 +41,14 @@ main{
 button{
     padding: 2%;
 }
+
+.numeros{
+    width: 5vw;
+}
+
+footer{
+    background-color: rgba(0, 0, 0, 0.623);
+    text-align: center;
+    align-items: center;
+    padding: 10%;
+}

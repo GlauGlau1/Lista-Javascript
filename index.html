@@ -11,8 +11,8 @@
 <body>
     <header>
         <section>
-            <h1 class="Titu">Ola Professora!!</h1>
-            <h3>Segue embaixo as soluções da lista de exercicios JavaScript, vlwww!</h3>
+            <h1 class="Titu">Olá Elih!!</h1>
+            <h3>Segue a baixo as soluções da lista de exercicios JavaScript, vlwww!</h3>
         </section>    
     </header>
     <main>
@@ -157,7 +157,192 @@
         <br>
         <!---------------->
         <!--Exercicio6-->
-        
+        <details class="exe6">
+            <summary>Exercício 6</summary>
+            <div class="resultado">
+                <h1>Esta entre 20 e 90?</h1>
+                <label>Digite um número:</label><br><br>
+                <input type="number" id="numero1">
+                <p id="ta"></p>
+                <button onclick="verificarNumero()">Enviar</button>
+                <script>
+                    function verificarNumero(){
+                        var numero = document.getElementById("numero1").value;
+                    
+                        if(numero >= 20 && numero <= 90){
+                            document.getElementById("ta").innerHTML = "O número está na faixa de 20 a 90.";
+                        } else{
+                            document.getElementById("ta").innerHTML = "O número não está na faixa de 20 a 90.";
+                        }
+                    }
+                </script>
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio7-->
+        <details class="exe7">
+            <summary>Exercício 7</summary>
+            <div class="resultado">
+                <h1>Aumentando salário 2.0</h1>
+                <label>Digite um salário:</label>
+                <input type="number" name="salario" id="salario2">
+                <p id="aument"></p>
+                <button onclick="enviarSalario()">Enviar</button>
+                <script>
+                    function enviarSalario(){
+                        var salario = parseFloat(document.getElementById("salario2").value);
+
+                        if(salario <= 500){
+                           aumento = salario * 0.1;
+                           salariocomAumento = salario + aumento;
+                           document.getElementById("aument").innerHTML = "O salário aumentou 10%. Salário: " + parseFloat(salariocomAumento).toFixed(2) + ".";
+                        } else{
+                            document.getElementById("aument").innerHTML = "Salário maior que 500,00."
+                        }
+                        //console.log(aumento); - para verificar se deu certo a conta.
+                    }
+                </script>
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio8-->
+        <details class="exe8">
+            <summary>Exercício 8</summary>
+            <div class="resultado">
+                <h1>Divisíveis por 5:</h1>
+                <label>Digite um número inteiro:</label><br><br>
+                <input type="number" id="num"><br><br>
+                <p id="mens"></p><br><br>
+                <button onclick="dividir()">Dividir</button>
+                <script>
+                    function dividir(){
+                        var numero = document.getElementById("num").value;
+                        if(numero % 5 == 0){
+                            document.getElementById("mens").innerHTML = "É divisível por 5."
+                        } else{
+                            document.getElementById("mens").innerHTML = "Não é divisivel por 5."
+                        }
+                    }
+                </script>
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio9-->
+        <details class="exe9">
+            <summary>Exercício 9</summary>
+            <div class="resultado">
+                <h1>Salário Liquido</h1>
+                <label>Digite o salário bruto:</label><br><br>
+                <input type="number" id="salario3"><br><br>
+                <p id="salario_l"></p><br><br>
+                <button type="button" onclick="enviarSalarioB()">Calcular</button>
+                <script>
+                    function enviarSalarioB() {
+                        var salarioB = document.getElementById("salario3").value;
+                        var inss, ir, salario_liquido;
+            
+                        if (salarioB < 1500) {
+                            inss = salarioB * 0.08;
+                            ir = 0;
+                        } else {
+                            inss = salarioB * 0.11;
+                            ir = salarioB * 0.05;
+                        }
+            
+                        salario_liquido = salarioB - inss - ir;
+            
+                        document.getElementById("salario_l").innerHTML = "O Salário líquido é de: R$ " + salario_liquido.toFixed(2);
+                    }
+                </script>
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio10-->
+        <details class="exe10">
+            <summary>Exercício 10</summary>
+            <div class="resultado">
+                <h1>Aumento de salários por classes</h1>
+                <label>Digite o salário do funcionário:</label><br><br>
+                <input type="number" id="salario4">
+                <select name="classe" id="classe">
+                    <option value="N" disabled selected>Classes:</option>
+                    <option value="A">Classe A</option>
+                    <option value="B">Classe B</option>
+                    <option value="C">Classe C</option>
+                </select><br><br>
+                <p id="aum"></p><br><br>
+                <button onclick="aumentarSalario()">Aumentar</button>
+                <script>
+                    function aumentarSalario(){
+                        var classe = document.getElementById("classe").value;
+                        var salario_atual = parseFloat(document.getElementById("salario4").value);
+                        var aumento = 0;
+                        var salarioNovo = 0;
+                        if(classe == "A"){
+                            aumento = salario_atual * 0.1;
+                        } else if(classe == "B"){
+                            aumento == salario_atual * 0.15;
+                        } else if(classe == "C"){
+                            aumento == salario_atual * 0.2;
+                        } else{
+                            document.getElementById("aum").innerHTML = "Selecione uma Classe ou digite um salário.";
+                        } 
+
+                        salarioNovo = salario_atual + aumento;
+
+                        document.getElementById("aum").innerHTML = "O novo salário é: R$ " + salarioNovo.toFixed(2) + ".";
+                    }
+                </script>
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio11-->
+        <details class="exe11">
+            <summary>Exercício 11</summary>
+            <div class="resultado">
+                <h1>Ao quadrado e somados</h1>
+                <label>Digite Cinco Números:</label><br><br>
+                <input type="number" id="num1" class="numeros">
+                <input type="number" id="num2" class="numeros">
+                <input type="number" id="num3" class="numeros">
+                <input type="number" id="num4" class="numeros">
+                <input type="number" id="num5" class="numeros"><br><br>
+                <p id="resolucoes"></p>
+                <button onclick="quadrado()">Enviar</button>
+                <script>
+                    function quadrado(){
+                        let numero1 = parseFloat(document.getElementById("num1").value);
+                        let numero2 = parseFloat(document.getElementById("num2").value);
+                        let numero3 = parseFloat(document.getElementById("num3").value);
+                        let numero4 = parseFloat(document.getElementById("num4").value);
+                        let numero5 = parseFloat(document.getElementById("num5").value);
+
+                        let aoquadrado1 = numero1 * numero1;
+                        let aoquadrado2 = numero2 * numero2;
+                        let aoquadrado3 = numero3 * numero3;
+                        let aoquadrado4 = numero4 * numero4;
+                        let aoquadrado5 = numero5 * numero5;
+
+                        let somados = aoquadrado1 + aoquadrado2 + aoquadrado3 + aoquadrado4 + aoquadrado5;
+
+                        console.log(somados);
+
+                        let resultado = "O quadrado de " + numero1 + " é " + aoquadrado1 + "<br>" + "O quadrado de " + numero2 + " é " + aoquadrado2 + "<br>" + "O quadrado de " + numero3 + " é " + aoquadrado3 + "<br>" + "O quadrado de " + numero4 + " é " + aoquadrado4 + "<br>" + "O quadrado de " + numero5 + " é " + aoquadrado5 + "<br>" + "A soma dos quadrados é " + somados;
+                
+                        document.getElementById("resolucoes").innerHTML = resultado;
+
+                    }
+                </script>
+            </div>
+        </details>
     </main>
+    <footer>
+        <h2>Feito com carinho, mesmo atrasado, por Glau❣ ✌</h2>
+    </footer>
 </body>
 </html>
