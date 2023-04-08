@@ -5,8 +5,159 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="acao.js"></script>
 </head>
 <body>
-    
+    <header>
+        <section>
+            <h1 class="Titu">Ola Professora!!</h1>
+            <h3>Segue embaixo as soluções da lista de exercicios JavaScript, vlwww!</h3>
+        </section>    
+    </header>
+    <main>
+        <!--Exercicio1-->
+        <details class="exe1">
+            <summary>Exercício 1</summary>
+            <div class="resultado">
+                <h1>Números pares de 1 a 100:</h1><br>
+                <p><script>
+                    function listarPares() {
+                        for (var i = 1; i <= 100; i++) {
+                        if (i % 2 == 0) {
+                            document.write(i + ", ");
+                        }
+                        }
+                    }
+                    listarPares();
+                    </script>
+                </p>
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio2-->
+        <details class="exe2">
+            <summary> Exercício 2</summary>
+            <div class="resultado">
+                <h1>Cálculo do Fatorial</h1>
+                <label>Digite um número:</label>
+                <br>
+                <br>
+                <input type="number" id="numero"/>
+                <br>
+                <br>
+                <p id="fat"></p>
+                <br>
+                <br>
+                <button onclick="Fatorial()">Calcular Fatorial</button>
+                <script>
+                  function Fatorial() {
+                    var numero = document.getElementById("numero").value;
+                    var fatorial = 1;
+                    for (var i = 2; i <= numero; i++) {
+                      fatorial *= i;
+                    }
+                    document.getElementById("fat").innerHTML = "O fatorial de " + numero + " é: " + fatorial;
+                  }
+                </script> 
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio3-->
+        <details class="exe3">
+            <summary>Exercício 3</summary>
+            <div class="resultado">
+                <h1>Aumento de Salário</h1>
+                <label>Digite o salário do funcionário:</label>
+                <br><br>
+                <input type="number" id="salario" />
+                <br><br>
+                <p id="res"></p>
+                <br><br>
+                <button onclick="calcularAumento()">Calcular Aumento</button>
+                <button onclick="novocalculo()">Calcular Outro Aumento</button>
+                <script>
+                    function calcularAumento() {
+                        var salario = parseFloat(document.getElementById("salario").value);
+                        var aumento;
+                        if (salario <= 500) {
+                            aumento = salario * 0.1;
+                        } else {
+                            aumento = salario * 0.08;
+                        }
+                        var sa = salario + aumento;
+                        document.getElementById("res").innerHTML = "O salário com aumento é: R$" + parseFloat(sa).toFixed(2);
+                    
+                    }
+                    function novocalculo(){
+                        var resposta = confirm("Deseja calcular o aumento para outro salário?");
+                        if (resposta == true) {
+                            document.getElementById("salario").value = "";
+                            document.getElementById("res").innerHTML = "";
+                        }
+                    }
+                </script>
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio4-->
+        <details class="exe4">
+            <summary>Exercício 4</summary>
+            <div class="resultado">
+                <h1>Armazenando numero inteiro e exibindo</h1>
+                <label for="">Digite um número inteiro:</label><br>
+                <input type="number" id="X"><br><br>
+                <label for="">Digite outro número inteiro:</label><br>
+                <input type="number" id="Y"><br><br>
+                <p id="nrs"></p>
+                <br>
+                <button onclick="mostrarNumeros()">Pronto</button>
+                <script>
+                    function mostrarNumeros(){
+                        var A = document.getElementById("X").value;
+                        var C = document.getElementById("Y").value;
+
+                        document.getElementById("nrs").innerHTML = "Os números que você digitou foram: " + A + " e " + C + ".";
+                    }
+                </script>
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio5-->
+        <details class="exe5">
+            <summary>Exercício 5</summary>
+            <div class="resultado">
+                <h1>Qual seu sexo?</h1>
+                <form onsubmit="return Validar()">
+                    <label for="sexo">Digite o seu sexo, usando "M" para masculino e "F" para feminino:</label>
+                    <br><br>
+                    <input type="text" id="sexo" name="sexo"><br><br>
+                    <button type="submit">Enviar</button>
+                </form>
+                <script>
+                    function Validar(){
+                        let sexoInput = document.getElementById("sexo");
+                        let sexo = sexoInput.value;
+
+                        if(sexo === 'M' || sexo ==='F'){
+                            alert("O sexo é válido.");
+                            return true;
+                        } else{
+                            alert("Digite apenas com M ou F.");
+                            return false;
+                        }
+                    }
+                </script>
+            </div>
+        </details>
+        <br>
+        <!---------------->
+        <!--Exercicio6-->
+        
+    </main>
 </body>
 </html>
